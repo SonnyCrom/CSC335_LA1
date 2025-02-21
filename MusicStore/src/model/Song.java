@@ -17,7 +17,7 @@ public class Song {
 	
 	// Returns a string of all the Songs information
 	public String getInfo() {
-		String info = this.name + " by " + this.author + ". Genre: " + this.genre + " Year: " + this.year;
+		String info = this.name + " by " + this.author + ". Genre: " + this.genre;
 		return info;
 	}
 	
