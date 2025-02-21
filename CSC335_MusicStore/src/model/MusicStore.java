@@ -39,12 +39,16 @@ public class MusicStore {
 	
 	// Return Album Information
 	public String albumInfo(String name) {
+		String found = "";
 		for (int i = 0; i < albumList.size(); i++) {
 			if (albumList.get(i).getName().equals(name)){
-				return albumList.get(i).getInfo();
+				found += albumList.get(i).getInfo() + '\n';
 			} else if (albumList.get(i).getAuthor().equals(name)){
-				return albumList.get(i).getInfo();
+				found += albumList.get(i).getInfo() + '\n';
 			}
+		}
+		if (found.length() > 0) {
+			return found;
 		}
 		return "Album not found!";
 	}
