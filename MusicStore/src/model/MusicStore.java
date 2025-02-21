@@ -17,12 +17,33 @@ public class MusicStore {
 	}
 	
 	public String songInfo(String name) {
+		ArrayList<String> foundSongs = new ArrayList<String>();
 		for (int i = 0; i < albumList.size(); i++) {
-			String songInformation = albumList.get(i).searchSong(name);
-			if (songInformation.length() != 0) {
-				return songInformation;
-			} 
+			ArrayList<String> temp = albumList.get(i).searchSong(name);
+			for (int j = 0; j < temp.size(); j++) {
+				foundSongs.add(temp.get(j));
+			}
 		}
-		return "Song not found!";
+		// Not sure if we should return a string or print later
+		// need to work on Visual
+		if (foundSongs.size() > 0) {
+			String list = "";
+			for (String info : foundSongs) {
+				list += info + '\n';
+			}
+			return list;
+		} else {
+			return "Song not found!";
+		}
+	}
+	
+	// Return Album Information
+	public String albumInfo(String name) {
+		for (int i = 0; i < albumList.size(); i++) {
+			if (albumList.get(i).getName().equals(name)){
+				return albumList.get(i).getInfo();
+			}
+		}
+		return "Album not found!";
 	}
 }
