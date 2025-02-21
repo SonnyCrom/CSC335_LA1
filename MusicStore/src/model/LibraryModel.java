@@ -13,6 +13,8 @@ public class LibraryModel {
 		playList.add(songList);
 	}
 	
-	
+	public String songInfo(String name) {
+		return "";
+	}
 	
 }
