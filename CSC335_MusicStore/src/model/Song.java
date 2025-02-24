@@ -42,4 +42,7 @@ public class Song {
 	public boolean getFavorite() {
 		return favorite;
 	}
+	public Rating getRating() {
+		return rating;
+	}
 }
